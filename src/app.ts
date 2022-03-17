@@ -3,15 +3,18 @@ import express from 'express';
 //////////////////////////////////////////////////////////
 // IMPORTACIONES
 import routerSignup from './routes/signup.routes';
+import config from './config/index'
+import { createConnection } from 'typeorm';
 
 //////////////////////////////////////////////////////////
 const app = express();
-
 const morgan = require('morgan');
 ////////////////////////////////////////////////////////////////
-import config from './config/index'
 
 ////////////////////////////////////////////////////////////////
+
+// CONEXION A LA DB
+createConnection();
 
 //---------> MIDDLEWARES <--------
 app.use(morgan('dev'));
