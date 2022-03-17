@@ -1,6 +1,10 @@
 // Iniciamos la app
 import express from 'express';
+//////////////////////////////////////////////////////////
+// IMPORTACIONES
+import routerSignup from './routes/signup.routes';
 
+//////////////////////////////////////////////////////////
 const app = express();
 
 const morgan = require('morgan');
@@ -14,13 +18,13 @@ app.use(morgan('dev'));
 
 
 // -------> SETTINGS <---------
-
-
+// Para que express lea los JSON
+app.use(express.json());
 
 
 //---------> ROUTES <---------
-
-
+// utilizamos las rutas 
+app.use(routerSignup);
 
 
 //////////////////////////////////////////////////
