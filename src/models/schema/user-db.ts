@@ -1,7 +1,7 @@
 
 import { getRepository } from 'typeorm';
 // Interface
-import { UserSignup } from '../../interface/user-signup';
+import { UserSignup } from '../../interface/User-signup';
 //Entidad
 import { User } from '../entity/User';
 

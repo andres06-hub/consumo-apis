@@ -1,9 +1,10 @@
 
 import express from 'express';
 import { Response, Request } from 'express';
-import { UserSignup } from '../interface/user-signup';
+import { UserSignup } from '../interface/User-signup';
 import signupValidator from '../validator/signup.validator'
 import { signup } from '../services/signup.service';
+import path from './paths/signup.paths';
 
 //////////////////////////////////////7/////
 const router = express.Router();
@@ -11,8 +12,8 @@ const router = express.Router();
 // Deconstruimos
 const { params, validate } = signupValidator;
 
-// RUTA 
-router.route('/signup')
+// RUTA SIGN UP
+router.route(path.signup)
     .get((req:Request, res:Response)=>{
         res.send("Hello from /signUp")
     })

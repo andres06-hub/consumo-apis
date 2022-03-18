@@ -2,7 +2,10 @@
 import express from 'express';
 //////////////////////////////////////////////////////////
 // IMPORTACIONES
+// IMPORTAMOS LAS RUTAS
 import routerSignup from './routes/signup.routes';
+import routerLogin from './routes/login.routes';
+// -------------------------------------------------
 import config from './config/index'
 import { createConnection } from 'typeorm';
 
@@ -28,6 +31,7 @@ app.use(express.json());
 //---------> ROUTES <---------
 // utilizamos las rutas 
 app.use(routerSignup);
+app.use(routerLogin);
 
 
 //////////////////////////////////////////////////

@@ -1,5 +1,5 @@
 // importamos la interface de USER
-import { User } from './user';
+import { User } from './User';
 
 export interface UserSignup extends User {
     

@@ -36,7 +36,7 @@ export default{
         if (!erros.isEmpty()){
             return res.status(422).json({
                 erros:erros.array()
-            })
+            });
         }
         next();
     },

@@ -1,7 +1,7 @@
 // servicio de registros para usuarios
 
 // import { User } from '../interface/user';
-import { UserSignup } from '../interface/user-signup';
+import { UserSignup } from '../interface/User-signup';
 import bcrypt from '../services/bcrypt.service';
 import { createUser } from '../models/schema/user-db';
 
