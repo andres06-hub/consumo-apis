@@ -11,8 +11,6 @@ const router = express.Router();
 
 //Deconstruimos 
 const { params, validate } = loginValidator;
-// TODO -> TERMINAR LA RUTA LOGIN CON QUERY
-// TODO -> TERMINAR EL TOKEN
 // RUTA LOGIN
 router.route(path.login)
     .get((req:Request, res:Response)=>{
@@ -30,7 +28,7 @@ router.route(path.login)
         //Validamos que los datos si esten
         if (!email || !password){return res.status(400).json({msg:"Invalid data!"})  }
 
-        console.log("DATA QUERY",typeof(email), password);
+        // console.log("DATA QUERY",typeof(email), password);
         // tratamos de hacer
         try {
             // Tratamos de obtener el TOKEN si el usuario esta registrad

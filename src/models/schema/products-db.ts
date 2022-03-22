@@ -2,14 +2,14 @@
 // Script para obtener los productos DB
 
 import { getRepository } from 'typeorm';
-import { Product } from '../entity/Products';
+import { Product } from '../entity/Product';
 
 ////////////////////////////////////////////////////////////////
 
 // Obtenemos los productos
-export const getProducts = () => {
+export const getProducts = async () => {
     // Obtenemos Todos los productos
-    const resultsProducts = getRepository(Product).find();
+    const resultsProducts = await getRepository(Product).find();
 
     if (!resultsProducts){return undefined;}
     //Retorna los datos obtenidos 

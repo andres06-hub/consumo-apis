@@ -6,6 +6,7 @@ import express from 'express';
 import routerSignup from './routes/signup.routes';
 import routerLogin from './routes/login.routes';
 import routerComprar from './routes/comprar.routes';
+import routerProducts from './routes/products.routes';
 // -------------------------------------------------
 import config from './config/index'
 import { createConnection } from 'typeorm';
@@ -34,6 +35,7 @@ app.use(express.json());
 app.use(routerSignup);
 app.use(routerLogin);
 app.use(routerComprar);
+app.use(routerProducts);
 
 //////////////////////////////////////////////////
 app.listen(config.port, ()=>{

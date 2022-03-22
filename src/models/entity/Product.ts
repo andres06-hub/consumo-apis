@@ -6,9 +6,12 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 export class Product {
 
     @PrimaryGeneratedColumn()
-    id:number;
+    id : number;
 
     @Column()
-    name:string;
+    name : string;
+
+    @Column()
+    price : number;
 
 }
