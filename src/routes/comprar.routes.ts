@@ -3,23 +3,30 @@ import { Request, Response } from 'express';
 
 // import path from './paths';
 import tokenValidator from '../validator/jwt.validator';
+import comprarValidator from '../validator/comprar.validator';
+import { isAuth } from '../middlewares/auth';
 ////////////////////////////////////////////////////////
 
 const router = express.Router();
 // Deconstruimos
-const { params, validate} = tokenValidator;
+const { paramsJWT, validateJWT} = tokenValidator;
+const { params, validate } = comprarValidator;
 
 router.route('/comprar')
+    .get(isAuth, async (req:Request, res:Response) => {
+        res.send('Welcome, Hello from /comprar')
+    })
 
     // validamos los datos por el params - validate
-    .post(params, validate, async(req:Request, res:Response) => {
+    // Se valida el token - isAuth
+    .post( paramsJWT,validateJWT, params, validate, isAuth, async (req:Request, res:Response) => {
 
         // obtengo el dato
         const { idProduct } = req.body;
 
         try {
             
-
+            return res.json({idProduct});
 
         } catch (err) {
             // mostramos el error por consola 
@@ -31,3 +38,6 @@ router.route('/comprar')
         }
 
     })
+
+////////////////////////////////////////////////////////////////
+export default router;

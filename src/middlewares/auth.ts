@@ -15,7 +15,7 @@ export const isAuth = async (req: Request, res: Response, next:NextFunction) => 
     console.log(`Token :: ${token}`);
 
     // Se valida el token
-    const payload = verifyToken(token);
+    const payload = await verifyToken(token);
     // Si el True
     if(payload){
         res.locals.payload = payload

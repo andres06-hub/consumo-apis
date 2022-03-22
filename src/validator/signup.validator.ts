@@ -13,6 +13,7 @@ export default{
         body('lastName')
             .not().isEmpty().withMessage('Empty file !!')
             .isLength({min:1 , max:200}).withMessage('Debe de contener mas de 0 y menor a 200 '),
+        // TODO -> VERIFICAR QUE LOS AÑOS SE CUMPLA LA LONGITUD etc...
         // body('age')
         //     .not().isEmpty().withMessage('Empty file !!')
         //     .isNumeric().withMessage("Not validad Data !")
