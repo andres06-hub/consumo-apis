@@ -14,3 +14,16 @@ export const createToken = async ( email : string ) => {
 }
 
 //Verificar el token obtenido 
+export const verifyToken = async ( token : string ) => { 
+    // leemos la llave
+    const cert = readFileSync( join(process.cwd(),'.secret', 'segn.key') );
+    // tratamos
+    try {
+        const decoded = jwt.verify(token, cert, { algorithms : ['RS256'] });
+        return decoded;
+    } catch (err) {
+        // error message
+        console.log(`Token ERROR : ${err}`);
+        return undefined;
+    }
+}
