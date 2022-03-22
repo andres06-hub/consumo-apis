@@ -10,7 +10,7 @@ export default {
             .isEmail().withMessage('Not validate email!!'),
         query('password')
             .not().isEmpty().withMessage('Empty file!!')
-            .isLength({ min:8, max:12 }).withMessage('Debe de contener minimo 8 caracteres'),
+            .isLength({ min:8, max:12 }).withMessage('Debe de contener min: 8 caracteres y max: 12'),
     ],
 
     validate : function (req:Request, res:Response, next:NextFunction){
