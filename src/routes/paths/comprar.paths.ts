@@ -1,0 +1,5 @@
+
+
+export default {
+    comprar : '/comprar'
+}

@@ -1,7 +1,7 @@
 import express from 'express';
 import { Request, Response } from 'express';
 
-// import path from './paths';
+import path from './paths/comprar.paths';
 import tokenValidator from '../validator/jwt.validator';
 import comprarValidator from '../validator/comprar.validator';
 import { isAuth } from '../middlewares/auth';
@@ -12,7 +12,7 @@ const router = express.Router();
 const { paramsJWT, validateJWT} = tokenValidator;
 const { params, validate } = comprarValidator;
 
-router.route('/comprar')
+router.route(path.comprar)
     .get(isAuth, async (req:Request, res:Response) => {
         res.send('Welcome, Hello from /comprar')
     })
@@ -26,7 +26,10 @@ router.route('/comprar')
 
         try {
             
-            return res.json({idProduct});
+            return res.status(200).json({
+                idProduct,
+                msg:"Compra OK",
+            });
 
         } catch (err) {
             // mostramos el error por consola 
