@@ -5,6 +5,7 @@ import path from './paths/comprar.paths';
 import tokenValidator from '../validator/jwt.validator';
 import comprarValidator from '../validator/comprar.validator';
 import { isAuth } from '../middlewares/auth';
+import { validateProduct } from '../services/products.service';
 ////////////////////////////////////////////////////////
 
 const router = express.Router();
@@ -25,9 +26,16 @@ router.route(path.comprar)
         const { idProduct } = req.body;
 
         try {
-            
+            // TODO -> VALIDAR SI EL PRODUCTO EXISTE EN LA DB
+            //Validar si el producto exite
+            const product = await validateProduct(idProduct);
+
+            if (product == undefined){
+                return res.status(404).json({msg:"Product not exist!"});
+            }
+
             return res.status(200).json({
-                idProduct,
+                product,
                 msg:"Compra OK",
             });
 

@@ -16,3 +16,10 @@ export const getProducts = async () => {
     return resultsProducts;
 };
 
+//Obtenemos un producto en especifico
+export const getProduct = async (idProduct : number) => {
+    // Obtener producto 
+    const resultProduct = await getRepository(Product).findOne( idProduct );
+    return resultProduct;
+}
+
