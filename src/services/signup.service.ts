@@ -14,10 +14,8 @@ export const signup = async ( values:UserSignup ) : Promise<object | undefined> 
     values = values as UserSignup;
     // Encriptamos la contraseña 
     const passHash = await bcryptHash(values.password);
-    
     // Pasamos los datos para guardar los datos 
     const userResults = await createUser(values, passHash);
     // retornamos los resultados 
     return userResults;
-
 }

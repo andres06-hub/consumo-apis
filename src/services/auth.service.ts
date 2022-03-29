@@ -8,12 +8,12 @@ export default {
     // obtenemos datos 
     login : async (email: string, password: string) =>{
 
-        console.log("DATOS ENTREGADOS CLI :: ", email, password);
+        console.log("DATOS ENTREGADOS CLI || :: ", email, password);
+        console.log("Auth de login");
         
         // Obtenemos el usuario 
         const userFound = await getUser(email);
         console.log("->LOGIN : USER FOUND :: ", userFound);
-        
         // Si hay un usuario
         if (!userFound){return false;}
         // ? = Este es para comprobar si existe

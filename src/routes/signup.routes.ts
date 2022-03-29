@@ -24,6 +24,7 @@ router.route(path.signup)
         try{
             // Pasamos los datos obtenidos
             const register = await signup( { firstName, lastName, age, city, email, password} );
+            
             // Validamos si la resouesta es diferente de indefinido es porque fue requistrado
             if(register != undefined){
                 res.status(200).json({

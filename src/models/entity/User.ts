@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"; 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
 // Se crea la entidad 
 @Entity()
