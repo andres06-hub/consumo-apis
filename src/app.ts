@@ -1,5 +1,5 @@
 // Iniciamos la app
-import express from 'express';
+import express, { Application } from 'express';
 //////////////////////////////////////////////////////////
 // IMPORTACIONES
 // IMPORTAMOS LAS RUTAS
@@ -8,11 +8,10 @@ import routerLogin from './routes/login.routes';
 import routerComprar from './routes/comprar.routes';
 import routerProducts from './routes/products.routes';
 // -------------------------------------------------
-import config from './config/index'
 import { createConnection } from 'typeorm';
 
 //////////////////////////////////////////////////////////
-const app = express();
+const app: Application = express();
 const morgan = require('morgan');
 ////////////////////////////////////////////////////////////////
 
@@ -37,14 +36,4 @@ app.use(routerLogin);
 app.use(routerComprar);
 app.use(routerProducts);
 
-//////////////////////////////////////////////////
-app.listen(config.port, ()=>{
-    console.log(`
-
-        ********************************************
-        🛡️  :: Server on PORT :: ${config.port} :: 🛡️
-                name Project ${config.name} 
-        ********************************************
-    `);
-    
-})
+export default app;

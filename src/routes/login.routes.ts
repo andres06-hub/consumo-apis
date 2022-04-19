@@ -14,7 +14,9 @@ const { params, validate } = loginValidator;
 // RUTA LOGIN
 router.route(path.login)
     .get((req:Request, res:Response)=>{
-        res.send("LOGIN GET");
+        res.status(200).json({
+            msg:"LOGIN GET"
+        });
     })
     //Metodo POST
     //Pasamos los validadores antes de que lleguen a la ruta
