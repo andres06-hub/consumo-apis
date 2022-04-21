@@ -50,7 +50,7 @@ describe('Login routes', () => {
         })
         ////////////////////////////////
         //Validated error
-        describe('ERRORS POST methos', () => {
+        describe('ERRORS POST methods', () => {
             it('should show a status 401', async () => {
                 
             })
